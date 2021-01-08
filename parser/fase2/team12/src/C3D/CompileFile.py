@@ -9,12 +9,7 @@ from gramatica import run_method
 
 #Declaracion de variables
 display = {}
-
 p = 0
-
-def execute():
-    print("Hola mundo")
-
 @with_goto
 def procedurenuevo():
 	global p
@@ -47,10 +42,7 @@ def procedurenuevo():
 	t7 = 'Select * from usuarios;'
 	display[p] = t7
 	p = p + 1
-<<<<<<< HEAD
 	execute()
-=======
->>>>>>> 0d162d1b88baa9fa72885ead1b68793e5b5abe57
 	goto .L6
 	label .L5
 	t8 = 'Select * from usuarios;'
@@ -58,16 +50,19 @@ def procedurenuevo():
 	p = p + 1
 	execute()
 	label .L6
-t9 = 1+1
-display[p] = t9
-p = p + 1 
-t10 = 2+2
-display[p] = t10
-p = p + 1 
-t11 = 3+3
-display[p] = t11
-p = p + 1 
-t12 = 4+4
-display[p] = t12
-p = p + 1 
-procedurenuevo()
+
+
+def execute():
+	global p
+	p=p-1
+	resp = run_method(display[p])
+	resp.execute(None)
+	p=p+1
+
+
+t3 = "USE HOLA;"
+display[p] = t3
+p = p + 1
+t4 = "Select myfuncion('text');"
+display[p] = t4
+p = p + 1
